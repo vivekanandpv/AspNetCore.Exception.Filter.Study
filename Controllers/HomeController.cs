@@ -20,7 +20,8 @@ namespace AspNetCore.Exception.Filter.Study.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            throw new System.Exception("Oops!");
+            //return View();
         }
 
         public IActionResult Privacy()
