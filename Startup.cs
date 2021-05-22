@@ -1,3 +1,4 @@
+using AspNetCore.Exception.Filter.Study.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,7 +23,9 @@ namespace AspNetCore.Exception.Filter.Study
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(options => {
+                options.Filters.Add(new GeneralExceptionFilter());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
