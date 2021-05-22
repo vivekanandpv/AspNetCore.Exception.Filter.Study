@@ -1,4 +1,5 @@
-﻿using AspNetCore.Exception.Filter.Study.Models;
+﻿using AspNetCore.Exception.Filter.Study.Exceptions;
+using AspNetCore.Exception.Filter.Study.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -20,7 +21,7 @@ namespace AspNetCore.Exception.Filter.Study.Controllers
 
         public IActionResult Index()
         {
-            throw new System.Exception("Oops!");
+            throw new AuthException("Oops!");
             //return View();
         }
 
